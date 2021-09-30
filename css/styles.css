@@ -1,0 +1,439 @@
+/* FONTS */
+
+@font-face {
+  font-family: 'Courier';
+  src: url(/css/fonts/courier_prime.woff2) format('woff2'),
+    url(/css/fonts/courier_prime.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(/css/fonts/raleway-medium.woff2) format('woff2'),
+    url(/css/fonts/raleway-medium.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(/css/fonts/raleway-mediumitalic.woff2) format('woff2'),
+    url(/css/fonts/raleway-mediumitalic.woff) format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(/css/fonts/raleway-light.woff2) format('woff2'),
+    url(/css/fonts/raleway-light.woff) format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url(/css/fonts/raleway-bold.woff2) format('woff2'),
+    url(/css/fonts/raleway-bold.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/css/fonts/montserratalternates-bold.woff2) format('woff2'),
+    url(/css/fonts/montserratalternates-bold.woff) format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ROOT */
+
+:root {
+  --bs-blue: #1a5dad;
+  --bs-primary: #1a5dad;
+  --bs-primary-rgb: 255, 255, 255;
+}
+
+/* ELEMENTS */
+
+body {
+  background-color: #e8e8e8;
+  color: #000;
+  font-family: 'courier', 'sans-serif';
+}
+
+body.menu-open {
+  /* Estää pystysuuntaisen skrollaamisen, jos menu on auki*/
+  overflow-y: hidden;
+}
+
+p {
+  font-family: 'Raleway', 'sans-serif';
+  color: #000;
+  font-weight: 500;
+}
+
+a {
+  color: #1a5dad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-family: 'Montserrat', 'sans-serif';
+  font-weight: bold;
+  /*  text-shadow: 0 0 2px #0aff37; */
+  text-align: center;
+  font-size: 5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer a,
+footer a:hover,
+footer a:active {
+  color: #000;
+}
+
+/* CLASSES  */
+
+.h2-text {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.boksi {
+  height: 800px;
+}
+
+.container-fluid.max-width {
+  max-width: 1500px;
+}
+
+.btn {
+  text-transform: uppercase;
+  color: #000;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #e1ff5c;
+  border: 1px solid #e1ff5c;
+  color: black;
+}
+
+.btn-primary,
+.btn-group .btn-primary.active {
+  background-color: #bda88c;
+  border-color: #bda88c;
+}
+
+.btn-group .btn:not(.active) {
+  /* vaikuttaa kaikkiin paitsi aktiivisiin */
+  opacity: 0.5;
+}
+
+.btn,
+.form-control {
+  padding: 0.5rem 0.75rem;
+  border-radius: 50;
+}
+
+.main-left {
+  background-color: #d77878;
+  padding: 4rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 0;
+  z-index: 9990;
+  transition: left 0.5s;
+}
+
+body.menu-open .navbar {
+  left: 0;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'Montserrat', 'sans-serif';
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  /* text-shadow: 0 0 10px #333333; */
+  color: #000 !important;
+}
+
+.navbar-nav .nav-link:hover {
+  text-decoration: none;
+}
+
+footer a img,
+footer a img:hover,
+footer a img:active {
+  color: #000;
+}
+
+/* ID:S */
+
+#menuBtn {
+  position: absolute;
+  top: 1rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: none;
+  padding: 0; /* Buttonissa oletuksena paddingia */
+  z-index: 9999;
+}
+
+#menuBtn .menu-btn-bar {
+  position: absolute;
+  left: 0;
+  display: block; /* Koska SPAN on inline!! Diveillä taas ei ois tarvinnu */
+  width: 100%;
+  height: 6px;
+  background-color: #000;
+  border-radius: 0.125rem;
+  transition: opacity 0.25s, top 0.25s, bottom 0.25s, transform 0.25s;
+  /* transition: all .25s toimisi myös */
+}
+
+#menuBtn .menu-btn-bar:first-child {
+  top: 2px;
+}
+
+#menuBtn .menu-btn-bar:nth-child(2),
+#menuBtn .menu-btn-bar:nth-child(3) {
+  top: 50%;
+  margin-top: -3px;
+}
+
+#menuBtn .menu-btn-bar:last-child {
+  bottom: 2px;
+}
+
+body.menu-open #menuBtn .menu-btn-bar:first-child {
+  top: -6px;
+  opacity: 0;
+}
+
+body.menu-open #menuBtn .menu-btn-bar:last-child {
+  bottom: -6px;
+  opacity: 0;
+}
+
+body.menu-open #menuBtn .menu-btn-bar:nth-child(2) {
+  transform: rotate(45deg);
+}
+
+body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
+  transform: rotate(-45deg);
+}
+/* MEDIA  */
+
+@media (max-width: 576px) {
+  .main-1-kuva {
+    width: 650px;
+    height: auto;
+    padding: 4rem;
+  }
+}
+
+@media (min-width: 280px) {
+  h2 {
+    font-size: 4.5rem;
+  }
+
+  .main-1-kuva {
+    width: 650px;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 3rem 1rem 0rem 1rem;
+  }
+
+  .boksi {
+    height: 400px;
+  }
+
+  .boksi-right {
+    height: 400px;
+  }
+}
+
+@media (min-width: 320px) {
+  h2 {
+    padding: 1rem;
+    font-size: 4rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 3rem;
+  }
+
+  .boksi {
+    height: 500px;
+  }
+
+  .main-1-kuva {
+    width: 550px;
+    height: auto;
+  }
+}
+
+@media (min-width: 420px) {
+  h2 {
+    padding: 1rem;
+    font-size: 4.5rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 4rem;
+  }
+
+  .boksi {
+    height: 580px;
+  }
+
+  .main-1-kuva {
+    width: 550px;
+    height: auto;
+  }
+}
+
+@media (min-width: 568px) {
+  h2 {
+    font-size: 6rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 4rem;
+  }
+
+  .boksi {
+    height: 700px;
+  }
+
+  .main-1-kuva {
+    width: 600px;
+    height: auto;
+    padding-top: 2rem;
+    padding-left: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 4rem;
+  }
+  .navbar {
+    position: relative;
+    left: 0;
+  }
+  .navbar-nav .nav-link {
+    font-size: 1.125rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 4rem;
+  }
+
+  .main-1-kuva {
+    width: 650px;
+    height: auto;
+  }
+
+  .boksi {
+    height: 500px;
+  }
+}
+
+@media (min-width: 992px) {
+  h2 {
+    font-size: 5rem;
+  }
+
+  .main-1-kuva {
+    width: 650px;
+    height: auto;
+    padding: 4rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 8rem;
+  }
+
+  .boksi {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1200px) {
+  h2 {
+    font-size: 5rem;
+  }
+
+  .main-1-kuva {
+    width: 700px;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 8rem;
+  }
+  .boksi {
+    height: 800px;
+  }
+}
+
+@media (min-width: 1500px) {
+  h2 {
+    font-size: 6rem;
+  }
+
+  .main-1-kuva {
+    width: 750px;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .main-left {
+    background-color: #d77878;
+    padding: 8rem;
+  }
+  .boksi {
+    height: 800px;
+  }
+}
