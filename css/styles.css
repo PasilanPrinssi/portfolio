@@ -76,12 +76,8 @@ p {
 }
 
 a {
-  color: #1a5dad;
+  color: #fff;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 h1,
@@ -110,12 +106,6 @@ footer a:active {
 }
 
 /* CLASSES  */
-
-.h2-text {
-  bottom: auto;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 .boksi {
   height: 800px;
@@ -159,6 +149,22 @@ footer a:active {
   padding: 4rem;
 }
 
+.main-text h2 a:hover:after {
+  color: #000;
+  content: attr(data-hover);
+  text-decoration: none;
+}
+
+.main-text h2:hover {
+  display: none;
+  content: attr(data-hover);
+}
+
+/* .hide-text {
+  visibility: hidden;
+  display: none;
+} */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -177,7 +183,7 @@ body.menu-open .navbar {
 
 .navbar-nav .nav-link {
   font-family: 'Montserrat', 'sans-serif';
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
   /* text-shadow: 0 0 10px #333333; */
@@ -345,7 +351,7 @@ body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
   .main-1-kuva {
     width: 600px;
     height: auto;
-    padding-top: 2rem;
+    padding-top: 4rem;
     padding-left: 3rem;
   }
 }
@@ -370,6 +376,7 @@ body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
   .main-1-kuva {
     width: 650px;
     height: auto;
+    padding-top: 2rem;
   }
 
   .boksi {
@@ -406,7 +413,7 @@ body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
   .main-1-kuva {
     width: 700px;
     height: auto;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .main-left {
@@ -414,7 +421,7 @@ body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
     padding: 8rem;
   }
   .boksi {
-    height: 800px;
+    height: 750px;
   }
 }
 
@@ -426,7 +433,7 @@ body.menu-open #menuBtn .menu-btn-bar:nth-child(3) {
   .main-1-kuva {
     width: 750px;
     height: auto;
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .main-left {
